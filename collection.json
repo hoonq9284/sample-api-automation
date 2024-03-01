@@ -162,6 +162,1052 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/users/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"name\": \"일정도\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/users/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 202 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 202 상태인 지 확인\", function () {",
+							"    // 응답값이 202 상태인 지 확인",
+							"    pm.response.to.have.status(202);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/users/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/posts",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/posts?userId={id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/posts?userId=1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/posts",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/posts/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/posts/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/posts/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/posts/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/posts/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 202 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 202 상태인 지 확인\", function () {",
+							"    // 응답값이 202 상태인 지 확인",
+							"    pm.response.to.have.status(202);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/posts/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/todos",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/todos?userId={id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/todos?userId=1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/todos?userId={id} Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 201 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 201 상태인 지 확인\", function () {",
+							"    // 응답값이 201 상태인 지 확인",
+							"    pm.response.to.have.status(201);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});",
+							"",
+							"// TEST CASE 2 : Response Body 검증",
+							"var responseBody = pm.response.json();",
+							"pm.test(\"Test Case 2 : Response Body id와 title 필드 값이 유효한 지 확인\", function() {",
+							"    pm.expect(responseBody.id).to.equal(100);",
+							"    pm.expect(responseBody.title).to.equal(\"Test\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 100,\n    \"title\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/todos",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/todos/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}/todos/1?",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"todos",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/todos/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/todos/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/todos/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 202 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 202 상태인 지 확인\", function () {",
+							"    // 응답값이 202 상태인 지 확인",
+							"    pm.response.to.have.status(202);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/todos/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/comments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/comments",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/comments?userId={id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/comments?userId=1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/comments?postId={id} Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/comments?postId=1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "postId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/comments/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/comments/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/comments/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/comments/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/comments/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// TEST CASE 1 : 200 상태 응답 확인",
+							"pm.test(\"Test Case 1 : 응답값이 200 상태인 지 확인\", function () {",
+							"    // 응답값이 200 상태인 지 확인",
+							"    pm.response.to.have.status(200);",
+							"    // 응답이 JSON 형태인 지 확인 ",
+							"    pm.response.to.have.jsonBody(); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/comments/1",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
