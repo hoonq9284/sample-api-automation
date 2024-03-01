@@ -1,0 +1,10 @@
+{
+    "name": "sample-api-automation",
+    "decription": "KoreaJSON 을 이용한 API 자동화 레포지토리",
+    "dependencies": {
+        "npm": "^10.2.4",
+        "newman": "^6.1.1",
+        "allure-commandline": "^2.27.0",
+        "newman-reporter-allure": "^2.13.0"
+    }
+}
